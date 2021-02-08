@@ -23,4 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('login.urls')),
     path('index/', include('pages.urls')),
+    path('aocr/', include('aocr.urls')),
+    path('job/',include('jobs.urls')),
+    path('isp/', include('isp.urls')),
+    path('material/', include('materials.urls')),
+    path('journal/', include('journal.urls')),
+    path('people/', include('people.urls')),
+    path('schema/', include('schema.urls')),
+    path('objects/', include('objects.urls')),
 ]

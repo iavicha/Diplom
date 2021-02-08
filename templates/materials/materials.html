@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" type="button" >Вывести список материалов</button>
+</div>
+
+<label for="exampleDataList" class="form-label">Поиск в базе</label>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<datalist id="datalistOptions">
+  <option value="Песок">
+
+</datalist>
+
+<h5> Добавить новый материал </h5>
+
+<div class="mb-3">
+  <input type="text" class="form-control " placeholder="Название материала">
+</div>
+<div class="mb-3">
+  <input type="text" class="form-control " placeholder="Количество">
+</div>
+
+<div class="container">
+  <div class="row g-2">
+    <div class="col-6">
+      <div class="p-3 border bg-light">
+          <h5> Сертификат соовтествия </h5>
+
+<div class="input-group mb-3">
+  <div class="input-group-text">
+
+    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+</div>
+
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">
+          <h5> Санитарно-Эпидимиалогическое заключение </h5>
+
+<div class="input-group mb-3">
+  <div class="input-group-text">
+
+    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+</div>
+
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">
+          <h5> Паспорт </h5>
+
+<div class="input-group mb-3">
+  <div class="input-group-text">
+
+    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+</div>
+
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light"><h5> Сертификация пожарной безопасности </h5>
+
+<div class="input-group mb-3">
+  <div class="input-group-text">
+
+    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+</div>
+
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01">
+</div>
+
+</div>
+
+  </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" type="button">Добавить</button>
+</div>
+
+
+</body>
+
+{% endblock content %}

@@ -4,25 +4,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <title> Страница входа </title>
+        <title> Страница входа </title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <script src="{% static '/js/bootstrap.js' %}"></script>
 </head>
 <body>
 
-<form method="POST">
-    {% csrf_token %}
+<form method="POST" action="{% url 'login' %}">
+{% csrf_token %}
     <div class="mx-auto" style="width: 400px;">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label"> Имя пользователя </label>
-    <input type="username" name="username" class="form-control" id="exampleInputEmail1">
-  </div>
-  <div class="mb-3">
+        <div class="mb-3">
+            <label for="exampleInputLogin" class="form-label"> Имя пользователя </label>
+                <input type="username" name="username" class="form-control" id="exampleInputLogin" required>
+            </div>
+        <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label"> Пароль </label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-  </div>
-
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" required>
+        </div>
     </div>
     <div class="mx-auto" style="width: 400px;">
     <button type="submit" class="btn btn-primary"> Войти </button>
