@@ -17,30 +17,31 @@
 
 <h5> Добавить новый материал </h5>
 
+<form method="POST" action="{% url 'add_material' %}">
+{% csrf_token %}
+
 <div class="mb-3">
-  <input type="text" class="form-control " placeholder="Название материала">
+  <input type="text" class="form-control " name ='material_name' placeholder="Название материала" required>
 </div>
 <div class="mb-3">
-  <input type="text" class="form-control " placeholder="Количество">
+  <input type="text" class="form-control " placeholder="Количество" name="how_nuch">
+    <input type="text" class="form-control " placeholder="Ед изм" name="ed_izm">
 </div>
 
 <div class="container">
   <div class="row g-2">
     <div class="col-6">
       <div class="p-3 border bg-light">
-          <h5> Сертификат соовтествия </h5>
+          <h5> Сертификат соответествия </h5>
 
-<div class="input-group mb-3">
-  <div class="input-group-text">
-
-    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+<div class="inline-group mb-3">
+  <input type="text" class="form-control" name="sert_name" >
+<input type="date" class="form-control" name="sert_date_1" >
+<input type="date" class="form-control" name="sert_date_2" >
 </div>
-
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupFile01">Upload</label>
-  <input type="file" class="form-control" id="inputGroupFile01">
+  <input type="file" class="form-control" id="inputGroupFile01" name="sert_file">
 </div>
       </div>
     </div>
@@ -48,17 +49,14 @@
       <div class="p-3 border bg-light">
           <h5> Санитарно-Эпидимиалогическое заключение </h5>
 
-<div class="input-group mb-3">
-  <div class="input-group-text">
-
-    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+<div class="inline-group mb-3">
+  <input type="text" class="form-control" name="sanp_name" >
+<input type="date" class="form-control" name="sanp_date_1" >
+<input type="date" class="form-control" name="sanp_date_2" >
 </div>
-
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupFile01">Upload</label>
-  <input type="file" class="form-control" id="inputGroupFile01">
+  <input type="file" class="form-control" id="inputGroupFile01" name="sanp_file">
 </div>
       </div>
     </div>
@@ -66,46 +64,42 @@
       <div class="p-3 border bg-light">
           <h5> Паспорт </h5>
 
-<div class="input-group mb-3">
-  <div class="input-group-text">
-
-    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+<div class="inline-group mb-3">
+  <input type="text" class="form-control" name="passport_name" >
+<input type="date" class="form-control" name="passport_date" >
 </div>
-
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupFile01">Upload</label>
-  <input type="file" class="form-control" id="inputGroupFile01">
+  <input type="file" class="form-control" id="inputGroupFile01" name="passport_file">
 </div>
-
       </div>
     </div>
     <div class="col-6">
+      <div class="p-3 border bg-light">
       <div class="p-3 border bg-light"><h5> Сертификация пожарной безопасности </h5>
 
-<div class="input-group mb-3">
-  <div class="input-group-text">
-
-    <input class="form-check-input" type="checkbox" value="" aria-label="Checkbox for following text input" >
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with checkbox" >
+<div class="inline-group mb-3">
+  <input type="text" class="form-control" name="pozhar_name" >
+<input type="date" class="form-control" name="pozhar_date_1" >
+    <input type="date" class="form-control" name="pozhar_date_2" >
 </div>
-
 <div class="input-group mb-3">
   <label class="input-group-text" for="inputGroupFile01">Upload</label>
-  <input type="file" class="form-control" id="inputGroupFile01">
+  <input type="file" class="form-control" id="inputGroupFile01" name="pozhar_file">
 </div>
+      </div>
+    </div>
+    <div class="col-6">
 
 </div>
 
   </div>
 
       <div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-primary" type="button">Добавить</button>
+  <button class="submit" type="btn btn-primary">Добавить</button>
 </div>
 
-
+</form>
 </body>
 
 {% endblock content %}

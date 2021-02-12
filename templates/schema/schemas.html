@@ -1,5 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<form action="schemas_list.html">
+{% csrf_token %}
+   <div class="d-grid gap-2 col-6 mx-auto">
+  <button class="submit" type="btn btn-primary" >Вывести список схем</button>
+</div>
+    </form>
+          <h5> Добавить исполнительную схему </h5>
+<form action="schemas_new.html">
+{% csrf_token %}
+<div class="inline-group mb-3">
+  <input type="text" class="form-control" name="passport_name" >
+<input type="date" class="form-control" name="passport_date" >
+</div>
+<div class="input-group mb-3">
+  <label class="input-group-text" for="inputGroupFile01">Upload</label>
+  <input type="file" class="form-control" id="inputGroupFile01" name="passport_file">
+</div>
+      </div>
+    </div>
+    <form class="col-6">
+      <div class="p-3 border bg-light">
 
+          <button class="submit" type="btn btn-primary">Добавить</button>
+        </div>
+    </form>
 {% endblock content %}
