@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static '/js/bootstrap.js' %}"></script>
+         <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}">Исполнительная докумментация</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <a class="nav-link" aria-current="page" href="{% url 'objects_index' %}">Объекты</a>
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Работы
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'job_new' %}">Создать запись</a></li>
+            <li><a class="dropdown-item" href="{% url 'jobs_list' %}">Вывести работы </a></li>
+          </ul>
+        </li>
+              <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Журнал работ
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'journal_index' %}">Журнал </a></li>
+            <li><a class="dropdown-item" href="{% url 'journal_edit' %}"> Изменить запись </a></li>
+            <li><a class="dropdown-item" href="{% url 'journal_list' %}"> Автожурнал </a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Качество
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item active" href="{% url 'material_index' %}">Материалы</a></li>
+            <li><a class="dropdown-item" href="{% url 'schema_index' %}">Исполнительные схемы </a></li>
+            <li><a class="dropdown-item" href="{% url 'isp_index' %}">Испытания </a></li>
+          </ul>
+        </li>
+        <a class="nav-link" href="#">Проектные работы</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            АОСР
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'aocr_list' %}">Список АОСР</a></li>
+            <li><a class="dropdown-item" href="{% url 'aocr_new' %}">Создать новый </a></li>
+          </ul>
+        </li>
+        <a class="nav-link" href="#">Реестр</a>
+        <a class="nav-link" href="{% url 'people_index' %}">Отвественные лица</a>
+          <form>
+        <a class="nav-link" href="{% url 'logout' %}" method="post" id="logout"> Выход </a>
+              {% csrf_token %}
+
+          </form>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</head>
+
+{% block content %}
+{% endblock content %}
+
+
+<footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Place sticky footer content here.</span>
+  </div>
+</footer>
